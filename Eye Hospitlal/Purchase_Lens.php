@@ -24,16 +24,13 @@
 			$timestamp = strtotime($_POST["dateOfPurchase"]);
 			$dateOfPurchase=date("Y-m-d", $timestamp);
 			$purchaseRate = $_POST["purchaseRate"];
-			$lensType = $_POST["lensType"];
-			$subLensType = $_POST["subLensType"];
-			$glassColor = $_POST["glassColor"];
 			$sphPower = $_POST["sphPower"];
 			$cylPower = $_POST["cylPower"];
 			$quantity = $_POST["quantity"];
 			$width = $_POST["width"];
 			$dimention = $_POST["dimention"];
 			
-			$sql = "INSERT INTO lens VALUES('$companyName','$lensName','$lensType','$subLensType','$glassColor','$sphPower','$cylPower',$quantity,$purchaseRate,'$width','$dimention','$dateOfPurchase')";
+			$sql = "INSERT INTO lens VALUES('$companyName','$lensName','$sphPower','$cylPower',$quantity,$purchaseRate,'$width','$dimention','$dateOfPurchase')";
 				
 				if($db->query($sql)=== TRUE)
 				{
@@ -91,58 +88,7 @@
 				</dataList>
 				
 			</div>
-					
-			<div class="form-group">
-				<label class="control-label col-sm-2">Lens Type</label>
-				<div class="col-sm-10">	
-					<input list="LensType" name="lensType" maxlength="30" class="form-control" required>
-				</div>
-				<dataList id="LensType">
-			  <?php
-					$query=mysqli_query($db,"Select DISTINCT(LensType)  From lens");
-					$count=mysqli_num_rows($query);
-					while($row = mysqli_fetch_assoc($query)){
-						$List = $row['LensType'];
-						echo "<option value=$List>$List</option>";
-					}
-				?>
-			  
-				</dataList>
-			</div>	
-			
-			<div class="form-group">
-				<label class="control-label col-sm-2">Sub Lens Type</label>
-				<div class="col-sm-10">
-					<input list="subLensType" name="subLensType" maxlength="30" class="form-control" required>
-				</div>
-			  	<datalist id="subLensType">
-				  <?php
-					$query=mysqli_query($db,"Select DISTINCT(SubLensType)  From lens");
-					$count=mysqli_num_rows($query);
-					while($row = mysqli_fetch_assoc($query)){
-						$List = $row['SubLensType'];
-						echo "<option value=$List>$List</option>";
-					}
-				?>
-				</datalist>
-			</div>
-			
-			<div class="form-group">
-				<label class="control-label col-sm-2">Glass Color</label>
-				<div class="col-sm-10">
-					<input list="glassColor" name="glassColor" maxlength="30" class="form-control" required>
-				</div>
-				<datalist id="glassColor">
-				  <?php
-					$query=mysqli_query($db,"Select DISTINCT(GlassColor)  From lens");
-					$count=mysqli_num_rows($query);
-					while($row = mysqli_fetch_assoc($query)){
-						$List = $row['GlassColor'];
-						echo "<option value=$List>$List</option>";
-					}
-				?>
-				</datalist>
-			</div>
+		
 			
 			
 			<div class="form-group">
