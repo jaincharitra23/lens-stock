@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Validation</title>
+<script>/*
+	function validation(){
+		//alert("hello");
+		var per = document.getElementById("percentage").value;
+		if(!/^[0-9]{0,2}.{0,1}[0-9]{1,2}$/.test(per)  )
+		{
+			
+				document.getElementById("p1").textContent = "invalid";
+		}
+		else if(parseFloat( per) > 100){
+			document.getElementById("p1").textContent = "invalid";
+		}
+		else{
+			document.getElementById("p1").textContent = "valid";
+		}
+	}*/
+	var reg = [],flag =1;
+	function register(){
+		var uname = document.getElementById("uname").value;
+		var pass = document.getElementById("pass").value;
+		var txt = "";
+		document.getElementById("uname").value="";
+		document.getElementById("pass").value="";
+		
+		for(x in reg){
+			//alert(reg[x].userName + " "+ reg[x].password + '\n' +" ");
+				if(reg[x].userName == uname){
+				flag = 0;
+				break;
+			}
+		}
+		if(flag){
+			reg.push({userName:uname, password:pass});
+			alert("succefully register");
+			flag = 1;
+		}
+		for(x in reg){
+			txt += reg[x].userName + " "+ reg[x].password +"<br>";
+		}
+		document.getElementById("p1").innerHTML = txt;
+	}
+	function signin(){
+		var uname = document.getElementById("uname").value;
+		var pass = document.getElementById("pass").value;
+		for(x in reg){
+			if(reg[x].userName == uname && reg[x].password == pass){
+				alert(reg[x].userName + " "+ reg[x].password);
+				window.location = "demo.html";
+				break;
+			}
+		
+		}
+	}
+</script>
+</head>
+<body>
+	
+		<input type="text" id="uname">
+		<input type="password" id="pass">
+		<input type="submit" value="Register" onClick="register();" >
+		<input type="submit" value="sign in" onClick="signin();">
+		<p id="p1"></p>	
+	
+	
+</body>
+</html>
