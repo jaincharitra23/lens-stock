@@ -78,7 +78,8 @@
 			$patientName = $_POST['patientName'];
 			$age = $_POST['age'];
 			$gender = $_POST['gender'];
-			$address = $_POST['address'];
+			
+			$address = preg_replace('/[^a-zA-Z0-9_.]/', '_', $_POST['address']);
 			$mobileNumber = $_POST['mobileNumber'];
 			$registrationNumber = $_POST['registrationNumber'];
 			$deliveryDate = $_POST['deliveryDate'];
