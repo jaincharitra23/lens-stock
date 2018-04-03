@@ -45,7 +45,7 @@
 			}
 		}
 	?>
-	<form name="PurchaseFrame" class="form-horizontal" method="post" >
+	<form name="PurchaseFrame" class="form-horizontal jumbotron" method="post" >
 		<div class="container">
 			<?php echo $insertionError; ?>
 			<div class="form-group">
@@ -122,8 +122,10 @@
 				</div>
 			</div>
 			
-			<input type="submit"  name="submitFrame" class="btn btn-lg btn-primary">  	
-			<input type="reset" class="btn btn-lg btn-danger">
+			<center>
+                		<input type="submit"  name="submitFrame" class="btn btn-lg btn-primary">  	
+                		<input type="reset" class="btn btn-lg btn-danger">
+            		</center>
 		</div>
 	</form>
 </body>
