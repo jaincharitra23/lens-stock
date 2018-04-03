@@ -2,70 +2,92 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Validation</title>
-<script>/*
-	function validation(){
-		//alert("hello");
-		var per = document.getElementById("percentage").value;
-		if(!/^[0-9]{0,2}.{0,1}[0-9]{1,2}$/.test(per)  )
-		{
-			
-				document.getElementById("p1").textContent = "invalid";
-		}
-		else if(parseFloat( per) > 100){
-			document.getElementById("p1").textContent = "invalid";
-		}
-		else{
-			document.getElementById("p1").textContent = "valid";
-		}
-	}*/
-	var reg = [],flag =1;
-	function register(){
-		var uname = document.getElementById("uname").value;
-		var pass = document.getElementById("pass").value;
-		var txt = "";
-		document.getElementById("uname").value="";
-		document.getElementById("pass").value="";
-		
-		for(x in reg){
-			//alert(reg[x].userName + " "+ reg[x].password + '\n' +" ");
-				if(reg[x].userName == uname){
-				flag = 0;
-				break;
-			}
-		}
-		if(flag){
-			reg.push({userName:uname, password:pass});
-			alert("succefully register");
-			flag = 1;
-		}
-		for(x in reg){
-			txt += reg[x].userName + " "+ reg[x].password +"<br>";
-		}
-		document.getElementById("p1").innerHTML = txt;
-	}
-	function signin(){
-		var uname = document.getElementById("uname").value;
-		var pass = document.getElementById("pass").value;
-		for(x in reg){
-			if(reg[x].userName == uname && reg[x].password == pass){
-				alert(reg[x].userName + " "+ reg[x].password);
-				window.location = "demo.html";
-				break;
-			}
-		
-		}
-	}
-</script>
+<title>Sale</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<script src="js/jquery-3.3.1.js" ></script>
+<script src="js/bootstrap.js" ></script>
 </head>
+
 <body>
-	
-		<input type="text" id="uname">
-		<input type="password" id="pass">
-		<input type="submit" value="Register" onClick="register();" >
-		<input type="submit" value="sign in" onClick="signin();">
-		<p id="p1"></p>	
-	
-	
+    <div class="container-fluid">
+        <p>Fare Price Specs Shop</p>
+        <p>Lions eye hospital, Parasia</p>
+        <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <label class="col-sm-3">Ref no.: </label><span class="col-sm-2"><!--$refenceno--></span>
+            <label class="col-sm-2"></label>
+            <label class="col-sm-3">Date: </label><span class="col-sm-2"><!--$Todays date--></span>
+        </div>
+        <div class="col-sm-12">
+            <label class="col-sm-3">Age: </label><span class="col-sm-2"><!--$Age--></span>
+            <label class="col-sm-2"></label>
+            <label class="col-sm-3">Gender: </label><span class="col-sm-2"><!--$gender--></span>
+        </div>
+        <div class="col-sm-12">
+            <label class="col-sm-3">Patient Name: </label><label class="col-sm-5"><!--$Patient Name--></label>
+            <label class="col-sm-4"></label>
+        </div>
+        <div class="col-sm-12">
+            <label class="col-sm-3">Address: </label><span class="col-sm-9"><!--$address--></span>
+        </div>
+        <div class="col-sm-12">
+            <label class="col-sm-3">Mobile No.: </label><span class="col-sm-9"><!--$mobileNumber--></span>
+        </div>
+        <div class="col-sm-12">
+            <label class="col-sm-3">Delivery Date: </label><span class="col-sm-2"><!--$deliveryDate--></span>
+            <label class="col-sm-2"></label>
+            <label class="col-sm-3">Reg No: </label><span class="col-sm-2"><!--$RegistrationNumber--></span>
+        </div>
+        <label class="col-sm-3">Frame: </label><span class="col-sm-2"><!--$Frame--></span>
+        <label class="col-sm-2"></label>
+        <label class="col-sm-3">Amount: </label><span class="col-sm-2"><!--$frameprice--></span>
+        <label class="col-sm-3">Glass: </label><span class="col-sm-2"><!--$Glass Name--></span>
+        <label class="col-sm-2"></label>
+        <label class="col-sm-3">Amount: </label><span class="col-sm-2"><!--$Glass Amount--></span>
+        <label class="col-sm-3">SPLL: </label><span class="col-sm-9"><!--$spll--></span>
+    </div>
+        <div class="col-sm-5">
+            <p>Total Amount</p>
+            <label class="col-sm-6">Advance:</label><label class="col-sm-6"><!--$advance--></label>
+            <label class="col-sm-6">Balance:</label><label class="col-sm-6"><!--$Balance--></label>
+        </div>
+        <div class="col-sm-7">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>CYL</th>
+                        <th>SPH</th>
+                        <th>Axis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>L</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>R</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <label class="col-sm-3">Ref no.: </label><span class="col-sm-2"><!--$refenceno--></span>
+        <label class="col-sm-2"></label>
+        <label class="col-sm-3">Date: </label><span class="col-sm-2"><!--$Todays date--></span>
+        <label class="col-sm-3">Patient Name: </label><span class="col-sm-5"><!--$Patient Name--></span>
+        <label class="col-sm-3">Delivery Date: </label><span class="col-sm-9"><!--$deliveryDate--></span>
+            <p>Total Amount</p>
+            <label class="col-sm-6">Advance:</label><label class="col-sm-6"><!--$advance--></label>
+            <label class="col-sm-6">Balance:</label><label class="col-sm-6"><!--$Balance--></label>
+        
+    </div>
 </body>
 </html>
